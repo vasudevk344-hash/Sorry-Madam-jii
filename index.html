@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm So Sorry Jii... 🥺</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Soft pastel gradient animation */
+      background: linear-gradient(-45deg, #ffc3a0, #ffafbd, #ffc3a0, #ffdfd3);
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating Heart Background Animation */
+    .heart-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .floating-heart {
+      position: absolute;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      animation: animate 15s linear infinite;
+      bottom: -150px;
+      border-radius: 50%;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Card Container */
+    .card {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      border-radius: 24px;
+      padding: 35px 25px;
+      max-width: 480px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* Music Button */
+    .music-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: rgba(255, 111, 145, 0.15);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #ff4d6d;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .music-btn:hover {
+      background: rgba(255, 111, 145, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* Main Cute GIF */
+    .gif-container img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(255, 154, 162, 0.3);
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    p.subtext {
+      color: #666;
+      font-size: 0.98rem;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* Photo Gallery */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      border: 3px solid #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-frame:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Interactive Buttons */
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 25px;
+      position: relative;
+      min-height: 60px;
+    }
+
+    button.action-btn {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    #yesBtn {
+      background: linear-gradient(135deg, #ff4d6d, #ff758f);
+      color: white;
+      box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+    }
+
+    #noBtn {
+      background-color: #e2e8f0;
+      color: #4a5568;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Hearts Particles -->
+  <div class="heart-bg">
+    <div class="floating-heart" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="floating-heart" style="left: 20%; animation-delay: 2s; width: 30px; height: 30px;"></div>
+    <div class="floating-heart" style="left: 35%; animation-delay: 4s;"></div>
+    <div class="floating-heart" style="left: 55%; animation-delay: 1s; width: 25px; height: 25px;"></div>
+    <div class="floating-heart" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="floating-heart" style="left: 85%; animation-delay: 5s;"></div>
+  </div>
+
+  <!-- Audio Player -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Main Card -->
+  <div class="card">
+    <button class="music-btn" onclick="toggleMusic()">
+      <span id="musicIcon">🎵</span> <span id="musicText">Play Music</span>
+    </button>
+
+    <div class="gif-container">
+      <img id="mainGif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHY5Mm9pZ2x3Z3ZwcnpzaTh4OW9jcWtzY2d3eTkyZmVwbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L9543RG48E436/giphy.gif" alt="Cute Sad Bear">
+    </div>
+
+    <h1 id="headline">I'm So Sorry... 🥺</h1>
+    <p id="subtext" class="subtext">Thodi si misunderstanding hogyi jii. Can you please forgive me?</p>
+
+        <!-- Photo Gallery -->
+    <div class="photo-gallery">
+      <div class="photo-frame">
+        <img src="images/memory.1.jpg" alt="Memory 1" onerror="this.src='https://picsum.photos/200?random=1'">
+      </div>
+      <div class="photo-frame">
+        <img src="images/memory.2.jpg" alt="Memory 2" onerror="this.src='https://picsum.photos/200?random=2'">
+      </div>
+      <div class="photo-frame">
+        <img src="images/memory.3.jpg" alt="Memory 3" onerror="this.src='https://picsum.photos/200?random=3'">
+      </div>
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="btn-container">
+      <button id="yesBtn" class="action-btn" onclick="acceptApology()">Yes 💕</button>
+      <button id="noBtn" class="action-btn" onmouseover="moveNoButton()" onclick="moveNoButton()">No 💔</button>
+    </div>
+  </div>
+
+  <script>
+    // Audio Control
+    const bgMusic = document.getElementById('bgMusic');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        bgMusic.pause();
+        document.getElementById('musicIcon').innerText = "🎵";
+        document.getElementById('musicText').innerText = "Play Music";
+      } else {
+        bgMusic.play();
+        document.getElementById('musicIcon').innerText = "🔊";
+        document.getElementById('musicText').innerText = "Pause Music";
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Dodging No Button Prompts
+    const noPrompts = [
+      "No 💔",
+      "Are you sure? 🥺",
+      "Please think again!",
+      "Look at our photos! 📸",
+      "Baby please? 🌸",
+      "You can't catch me! 😜"
+    ];
+    let promptIndex = 0;
+
+    function moveNoButton() {
+      const noBtn = document.getElementById('noBtn');
+      
+      // Calculate position within viewport limits
+      const x = Math.random() * (window.innerWidth - 130);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+
+      promptIndex = (promptIndex + 1) % noPrompts.length;
+      noBtn.innerText = noPrompts[promptIndex];
+    }
+
+    // Happy End Trigger
+    function acceptApology() {
+      // Auto-play music if not playing
+      if (!isPlaying) {
+        toggleMusic();
+      }
+
+      document.getElementById('headline').innerHTML = "Yay! Thank you! 🥰❤️";
+      document.getElementById('subtext').innerHTML = "You're the best , you're awesome and i am yourss naa baby!";
+      
+      // Swap Sad GIF to Happy GIF
+      document.getElementById('mainGif').src = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z6eWtzM2k3bW01eGk0aW1mNWx2bXFiY2s5ZjZreSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MDJ9IbxxvDUQM/giphy.gif";
+
+      // Hide No button and celebrate
+      document.getElementById('noBtn').style.display = 'none';
+      const yesBtn = document.getElementById('yesBtn');
+      yesBtn.style.transform = "scale(1.2)";
+      yesBtn.innerText = "Best Day Ever! 🎉";
+    }
+  </script>
+</body>
+</html>
+
